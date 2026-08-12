@@ -5,10 +5,10 @@ export default function GoldButton({
   className = "",
 }) {
   const base =
-    "inline-block font-heading-alt tracking-wide text-sm sm:text-base px-8 py-3 transition-colors duration-200 uppercase";
+    "inline-block font-inter tracking-wide text-sm sm:text-5xl px-8 py-3 transition-colors duration-200 rounded-lg";
 
   const styles = {
-    filled: "bg-gold-600 text-cream-50 hover:bg-gold-700",
+    filled: "bg-[#AE7D38] text-white hover:bg-gold-700",
     inverted: "bg-cream-50 text-gold-700 hover:bg-cream-100",
   };
 

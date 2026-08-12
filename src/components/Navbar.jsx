@@ -1,18 +1,22 @@
 import { useState } from "react";
 import { nav } from "../data/content";
+import logo from "/logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="bg-gold-600 relative z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+    <header className="bg-[#B68540] relative z-50">
+      <div className="mx-auto flex text-[#261544] items-center justify-between px-8">
         {/* Brand */}
         <a href="#" className="flex items-center gap-2 shrink-0">
-          <span className="w-7 h-7 rounded-full bg-cream-50 grid place-items-center text-gold-700 text-xs">
-            ✦
-          </span>
-          <span className="font-heading text-cream-50 text-sm sm:text-lg tracking-wide whitespace-nowrap">
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-24"
+            // className="absolute -top-20 left-10 w-[85%] sm:w-[70%] md:w-full -rotate-7 select-none pointer-events-none filter-[drop-shadow(0px_0px_4px_#00000030)]"
+          />
+          <span className="font-cinzel font-bold text-sm sm:text-3xl tracking-wide whitespace-nowrap">
             {nav.brand}
           </span>
         </a>
@@ -23,7 +27,7 @@ export default function Navbar() {
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="font-heading-alt text-cream-50 text-sm tracking-wide hover:text-cream-200 transition-colors"
+              className="font-inter text-xl tracking-wide hover:text-cream-200 transition-colors"
             >
               {link}
             </a>
@@ -32,7 +36,7 @@ export default function Navbar() {
 
         <a
           href="#contact"
-          className="hidden lg:inline-block bg-cream-50 text-gold-700 font-heading-alt text-sm px-5 py-2 tracking-wide hover:bg-cream-100 transition-colors"
+          className="hidden lg:inline-block bg-[#F0EAE0] rounded-lg font-inter text-sm px-5 py-2 tracking-wide hover:bg-cream-100 transition-colors"
         >
           {nav.cta}
         </a>

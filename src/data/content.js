@@ -12,8 +12,7 @@ export const hero = {
   heading: "EVERY JOURNEY TELLS",
   headingAccent: "A STORY!",
   subtext:
-    "Curated adventures to the world's most extraordinary places. Expert guides, handpicked stays, and memories that last a lifetime.",
-  img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1600&auto=format&fit=crop",
+    "Curated adventures to the world's<br/> most extraordinary places. Expert guides,<br/> handpicked stays, and memories that last a lifetime.",
 };
 
 // Each "tour" is one of the big promo blocks: banner image, title, blurb, CTA, gallery strip
@@ -21,16 +20,10 @@ export const tours = [
   {
     key: "umrah",
     banner:
-      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=1600&auto=format&fit=crop",
+      "images/umrah-tour.png",
     title: "UMRAH TOUR!",
     text: "FOR MORE QUERIES PRESS THE BUTTON BELOW.",
     button: "Know More",
-    gallery: [
-      "https://images.unsplash.com/photo-1519406596751-0a3ccc4937fe?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?q=80&w=600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?q=80&w=600&auto=format&fit=crop",
-    ],
   },
   {
     key: "dubai",
@@ -291,6 +284,7 @@ export const exploreMore = {
 
 export const community = {
   heading: "JOIN OUR COMMUNITY!",
+  headingFont: "font-namdhinggo",
   socials: [
     { key: "instagram", label: "Instagram", href: "#" },
     { key: "whatsapp", label: "WhatsApp", href: "#" },
@@ -300,16 +294,12 @@ export const community = {
 
 export const contact = {
   heading: "CONTACT US!",
+  headingFont: "font-namdhinggo",
   formHeading: "YOUR FEEDBACK MATTERS!",
   fields: ["Your Name", "Your Email", "Number", "Message"],
-  submit: "Submit.",
+  submit: "Submit",
   phone: { label: "PHONE", value: "+91 *********" },
   mail: { label: "MAIL", value: "info@alafiyahtravels.com" },
-};
-
-export const ctaBanner = {
-  text: "MESSAGE US ON WHAT'S APP TO KNOW MORE!",
-  button: "Get Details Now",
 };
 
 export const footer = {
@@ -317,14 +307,14 @@ export const footer = {
   brand: "AL-AFIYAH TOURS & TRAVELS!",
   columns: [
     {
-      heading: "SERVICES.",
+      heading: "SERVICES",
       links: [
-        "Hotel Reservations.",
-        "Car Rental Services.",
-        "Passport & Visa Assistance.",
-        "Flight Tickets.",
-        "Tour Packages.",
-        "All Kind of Documentation.",
+        "Hotel Reservations",
+        "Car Rental Services",
+        "Passport & Visa Assistance",
+        "Flight Tickets",
+        "Tour Packages",
+        "All Kind of Documentation",
       ],
     },
     { heading: "DOMESTIC", links: ["Kashmir", "Kerala", "Goa", "Jaipur"] },

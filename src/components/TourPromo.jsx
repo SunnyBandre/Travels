@@ -10,22 +10,22 @@ export default function TourPromo({
   text,
   button,
   gallery,
-  titleSize = "text-3xl sm:text-4xl md:text-5xl",
+  titleSize = "text-3xl sm:text-4xl md:text-[150px]",
 }) {
   return (
     <section className="bg-cream-50">
       <img
         src={banner}
         alt={title}
-        className="w-full h-56 sm:h-80 md:h-[28rem] object-cover"
+        className="w-full h-56 sm:h-80 md:h-full object-contain"
       />
 
-      <div className="text-center py-10 sm:py-14 px-4">
-        <h2 className={`font-heading text-gold-700 ${titleSize} tracking-wide`}>
+      <div className="text-center py-10 sm:py-20 px-4">
+        <h2 className={`font-namdhinggo text-[#A2722D] font-bold ${titleSize} tracking-wide`}>
           {title}
         </h2>
-        <p className="font-heading-alt text-neutral-800 text-sm sm:text-base mt-4 max-w-md mx-auto leading-relaxed">
-          {text}
+        <p className="font-mohave text-sm sm:text-5xl mt-4 mx-auto leading-relaxed">
+          FOR MORE QUERIES PRESS THE<br/> BUTTON BELOW.
         </p>
         <GoldButton href="#contact" className="mt-6">
           {button}
