@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Oswald:wght@300;400;500;600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Warm gold / brass — matches the site's primary accent & banners */
+  --color-gold-50: #fbf6ec;
+  --color-gold-100: #f3e4c4;
+  --color-gold-200: #e6c98c;
+  --color-gold-300: #d6ad5e;
+  --color-gold-400: #c29a44;
+  --color-gold-500: #b08a3b; /* buttons, headings */
+  --color-gold-600: #a07b32; /* banners */
+  --color-gold-700: #8b6a2a; /* hover / headings on cream */
+  --color-gold-800: #6e5320; /* dark gold sections (Introduction, CTA) */
+  --color-gold-900: #4f3b17;
+
+  /* Warm off-white background used across the page */
+  --color-cream-50: #faf7f0;
+  --color-cream-100: #f3eee1;
+  --color-cream-200: #e9e1cc;
+
+  /* Elegant serif display face — used for all headings/titles */
+  --font-heading: "Cinzel", serif;
+  /* Condensed uppercase sans — used for nav, body copy, buttons, labels */
+  --font-heading-alt: "Oswald", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
