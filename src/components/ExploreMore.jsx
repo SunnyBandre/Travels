@@ -2,7 +2,7 @@ import { exploreMore } from "../data/content";
 
 export default function ExploreMore() {
   return (
-    <section id="destination" className="bg-cream-50">
+    <section id="destination">
       <div className="max-w-5xl mx-auto px-6 sm:px-10 py-10 sm:py-14 flex flex-col sm:flex-row gap-10">
         {exploreMore.cards.map((card) => (
           <div

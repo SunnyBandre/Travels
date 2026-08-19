@@ -6,7 +6,7 @@ import { hero } from "../data/content";
 export default function Hero() {
   return (
     <section
-      className="relative h-screen bg-cover bg-bottom overflow-hidden flex drop-shadow-[0px_0px_4px_#00000040]"
+      className="relative h-dvh min-h-[560px] bg-cover bg-bottom overflow-hidden flex drop-shadow-[0px_0px_4px_#00000040]"
       style={{ backgroundImage: `url(${heroBg})` }}
     >
       {/* Darkens the left side so the heading stays readable over the sky */}
@@ -16,10 +16,10 @@ export default function Hero() {
       <img
         src={aeroplane}
         alt="Airplane climbing into a sunset sky"
-        className="absolute -top-20 left-10 w-[85%] sm:w-[70%] md:w-full select-none pointer-events-none drop-shadow-[0px_0px_4px_#00000030] plane-takeoff"
+        className="absolute -top-16 left-6 sm:-top-20 sm:left-10 w-[80%] sm:w-[55%] max-w-[720px] select-none pointer-events-none drop-shadow-[0px_0px_4px_#00000030] plane-takeoff"
       />
 
-      <div className="relative z-10 mx-auto p-23 w-full">
+      <div className="relative z-10 mx-auto px-6 py-10 sm:p-23 w-full">
         <div className="">
           <h1 className="font-julius text-white font-normal text-4xl sm:text-8xl leading-tight tracking-wide">
             {hero.heading}

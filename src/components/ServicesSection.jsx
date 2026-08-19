@@ -14,9 +14,9 @@ export default function ServicesSection() {
             <img
               src={s.img}
               alt={s.title}
-              className="w-96 object-contain rounded shrink-0"
+              className="w-24 sm:w-56 md:w-72 lg:w-96 object-contain rounded shrink-0"
             />
-            <h3 className="font-mohave text-xl sm:text-3xl md:text-6xl tracking-wide text-center flex-1 uppercase">
+            <h3 className="font-mohave text-xl sm:text-3xl md:text-6xl tracking-wide text-center flex-1 min-w-0 uppercase">
               {s.title}
             </h3>
           </div>
