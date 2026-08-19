@@ -1,31 +1,30 @@
 import { exploreMore } from "../data/content";
-import SectionBanner from "./SectionBanner";
-import GoldButton from "./GoldButton";
 
 export default function ExploreMore() {
   return (
     <section id="destination" className="bg-cream-50">
-      <SectionBanner heading={exploreMore.heading} />
-
-      <div className="max-w-4xl mx-auto px-6 sm:px-10 py-10 sm:py-14 grid sm:grid-cols-2 gap-10">
+      <div className="max-w-5xl mx-auto px-6 sm:px-10 py-10 sm:py-14 flex flex-col sm:flex-row gap-10">
         {exploreMore.cards.map((card) => (
-          <div key={card.key} className="text-center">
-            <div className="grid grid-cols-4 gap-1 rounded-2xl overflow-hidden">
-              {card.images.map((src, i) => (
-                <img
-                  key={i}
-                  src={src}
-                  alt=""
-                  className="w-full h-20 sm:h-28 object-cover"
-                />
-              ))}
+          <div
+            key={card.key}
+            className="flex-1 min-w-0 flex flex-col items-center text-center"
+          >
+            <div className="w-full rounded-4xl overflow-hidden">
+              <img
+                src={card.image}
+                alt={card.title}
+                className="w-full h-full object-cover"
+              />
             </div>
-            <h3 className="font-heading text-gold-700 text-lg sm:text-xl tracking-wide mt-4">
+            <h3 className="font-mohave text-[#A2722D] text-lg sm:text-5xl max-w-min tracking-wide py-16">
               {card.title}
             </h3>
-            <GoldButton href="#contact" className="mt-4 !px-5 !py-2 !text-xs">
+            <a
+              href="#contact"
+              className="inline-block font-inter tracking-wide text-sm sm:text-xl md:text-2xl px-6 py-3 transition-colors duration-200 rounded-lg bg-[#A77631] text-white hover:bg-gold-700"
+            >
               {card.button}
-            </GoldButton>
+            </a>
           </div>
         ))}
       </div>

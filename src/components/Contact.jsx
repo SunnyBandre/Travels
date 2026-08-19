@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { contact } from "../data/content";
-import SectionBanner from "./SectionBanner";
+import SectionBanner from "./SectionTitle";
 import phone from "/images/phone.png";
 import mail from "/images/mail.png";
 
@@ -34,7 +34,8 @@ export default function Contact() {
           className="bg-[#133125] rounded-[44px] p-6 sm:p-8 flex flex-col gap-4"
         >
           <h3 className="font-namdhinggo text-white text-3xl sm:text-5xl tracking-wide text-center mb-2">
-            YOUR FEEDBACK<br/> MATTERS!
+            YOUR FEEDBACK
+            <br /> MATTERS!
           </h3>
 
           {[

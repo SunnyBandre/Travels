@@ -8,12 +8,15 @@ export default function GoldButton({
     "inline-block font-inter tracking-wide text-sm sm:text-5xl px-8 py-3 transition-colors duration-200 rounded-lg";
 
   const styles = {
-    filled: "bg-[#AE7D38] text-white hover:bg-gold-700",
+    filled: "bg-[#A77631] text-white hover:bg-gold-700",
     inverted: "bg-cream-50 text-gold-700 hover:bg-cream-100",
   };
 
   return (
-    <a href={href} className={`${base} ${styles[variant]} ${className}`}>
+    <a
+      href={href}
+      className={`${base} text-5xl ${styles[variant]} ${className}`}
+    >
       {children}
     </a>
   );

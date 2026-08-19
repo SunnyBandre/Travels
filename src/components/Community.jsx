@@ -1,5 +1,5 @@
 import { community } from "../data/content";
-import SectionBanner from "./SectionBanner";
+import SectionBanner from "./SectionTitle";
 
 const icons = {
   instagram: "/images/instagram.png",

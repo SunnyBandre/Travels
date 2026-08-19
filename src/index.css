@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Oswald:wght@300;400;500;600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Namdhinggo:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Namdhinggo:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mohave:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -34,6 +36,8 @@
   --font-montserrat-alt: "Montserrat Alternates", sans-serif;
   --font-mohave: "Mohave", sans-serif;
   --font-mona: "Mona Sans", sans-serif;
+  --font-marcellus: "Marcellus", sans-serif;
+  --font-marcellus-sc: "Marcellus SC", sans-serif;
 }
 
 html {
@@ -42,4 +46,27 @@ html {
 
 body {
   margin: 0;
+}
+
+@keyframes plane-takeoff {
+  0% {
+    transform: translate(-45vw, 35vh) rotate(-7deg) scale(0.8);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  45%,
+  70% {
+    transform: translate(0, 0) rotate(-7deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(55vw, -55vh) rotate(-25deg) scale(0.65);
+    opacity: 0;
+  }
+}
+
+.plane-takeoff {
+  animation: plane-takeoff 9s ease-in-out infinite;
 }
