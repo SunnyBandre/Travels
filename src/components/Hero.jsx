@@ -1,4 +1,3 @@
-// Update these two paths to wherever your images actually live.
 import heroBg from "/images/hero.png";
 import aeroplane from "/images/aeroplane.png";
 import { hero } from "../data/content";
@@ -6,7 +5,7 @@ import { hero } from "../data/content";
 export default function Hero() {
   return (
     <section
-      className="relative h-dvh min-h-[560px] bg-cover bg-bottom overflow-hidden flex drop-shadow-[0px_0px_4px_#00000040]"
+      className="relative h-100 sm:h-140 xl:h-screen bg-cover bg-bottom overflow-hidden flex drop-shadow-[0px_0px_4px_#00000040]"
       style={{ backgroundImage: `url(${heroBg})` }}
     >
       {/* Darkens the left side so the heading stays readable over the sky */}
@@ -16,18 +15,20 @@ export default function Hero() {
       <img
         src={aeroplane}
         alt="Airplane climbing into a sunset sky"
-        className="absolute -top-16 left-6 sm:-top-20 sm:left-10 w-[80%] sm:w-[55%] max-w-[720px] select-none pointer-events-none drop-shadow-[0px_0px_4px_#00000030] plane-takeoff"
+        className="absolute top-20 left-6 sm:top-16 lg:top-0 xl:-top-16 xl:left-10 w-full select-none pointer-events-none drop-shadow-[0px_0px_4px_#00000030] plane-takeoff"
       />
 
-      <div className="relative z-10 mx-auto px-6 py-10 sm:p-23 w-full">
+      <div className="relative z-10 mx-auto px-10 pt-16 sm:p-23 w-full">
         <div className="">
-          <h1 className="font-julius text-white font-normal text-4xl sm:text-8xl leading-tight tracking-wide">
+          <h1 className="font-julius text-white font-normal text-2xl md:text-4xl xl:text-8xl leading-tight tracking-wide">
             {hero.heading}
             <br />
-            <span className="text-[#37ff00]">{hero.headingAccent}</span>
+            <span className="text-[#37ff00] inline-block animate-pulse drop-shadow-[0_0_12px_rgba(55,255,0,0.5)]">
+              {hero.headingAccent}
+            </span>
           </h1>
           <p
-            className="font-namdhinggo text-white font-bold text-base sm:text-3xl leading-tight"
+            className="font-namdhinggo text-white font-bold text-base py-4 sm:text-xl lg:text-2xl xl:text-3xl leading-tight"
             dangerouslySetInnerHTML={{ __html: hero.subtext }}
           />
         </div>

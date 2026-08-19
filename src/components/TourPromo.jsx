@@ -1,71 +1,107 @@
+import { useEffect, useRef, useState } from "react";
 import GoldButton from "./GoldButton";
 
-function ImageGrid({ images }) {
-  return (
-    <div
-      className={`grid grid-cols-2 sm:grid-cols-4 ${
-        images.length > 4 ? "md:grid-cols-5" : ""
-      }`}
-    >
-      {images.map((src, i) => (
-        <img
-          key={i}
-          src={src}
-          alt=""
-          className="w-full h-32 sm:h-40 md:h-48 object-cover"
-        />
-      ))}
-    </div>
-  );
-}
-
-/**
- * Reusable "banner (image or image grid) + heading + blurb + CTA
- * (+ optional bottom gallery grid)" block.
- * Covers Umrah / Dubai / Yacht / Aviation / Kashmir style sections.
- *
- * `banner` accepts either:
- *   - a single image URL string  -> renders as one large banner image
- *   - an array of image URLs     -> renders as a grid (like Dubai's top 4)
- */
 export default function TourPromo({
   banner,
   title,
   text,
   button,
-  gallery,
   titleSize = "text-3xl sm:text-4xl md:text-9xl",
   headerFont = "font-namdhinggo",
 }) {
-  const isBannerGrid = Array.isArray(banner);
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -80px 0px",
+      },
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="bg-cream-50">
-      {isBannerGrid ? (
-        <ImageGrid images={banner} />
-      ) : (
+    <section ref={sectionRef} className="overflow-hidden">
+      {/* ================= IMAGE ================= */}
+      <div className="relative overflow-hidden">
         <img
           src={banner}
           alt={title}
-          className="w-full h-56 sm:h-screen object-contain"
+          className={`w-full h-[280px] sm:h-[70vh] lg:h-screen object-contain transition-all duration-1600 ease-[cubic-bezier(0.22,1,0.36,1)]
+            ${
+              isVisible
+                ? "opacity-100 scale-100 blur-0"
+                : "opacity-0 scale-[1.12] blur-md"
+            }
+          `}
         />
-      )}
+      </div>
 
+      {/* ================= CONTENT ================= */}
       <div className="text-center py-10 sm:py-20 px-4">
+        {/* TITLE */}
         <h2
-          className={`${headerFont} text-[#A2722D] font-bold ${titleSize} tracking-wide`}
+          className={`${headerFont} text-[#A2722D] font-bold ${titleSize} tracking-wide transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]
+            ${
+              isVisible
+                ? "opacity-100 translate-y-0 blur-0"
+                : "opacity-0 translate-y-16 blur-md"
+            }
+          `}
+          style={{
+            transitionDelay: "350ms",
+          }}
         >
           {title}
         </h2>
-        <p className="font-mohave text-2xl sm:text-5xl mt-4 mx-auto leading-relaxed">
+
+        {/* DESCRIPTION */}
+        <p
+          className={`font-mohave text-2xl sm:text-5xl mt-4 mx-auto leading-relaxed max-w-6xl transition-all duration-900 ease-[cubic-bezier(0.22,1,0.36,1)]
+            ${
+              isVisible
+                ? "opacity-100 translate-y-0 blur-0"
+                : "opacity-0 translate-y-12 blur-sm"
+            }
+          `}
+          style={{
+            transitionDelay: "550ms",
+          }}
+        >
           {text}
         </p>
-        <GoldButton href="#contact" className="mt-6">
-          {button}
-        </GoldButton>
-      </div>
 
-      {gallery && gallery.length > 0 && <ImageGrid images={gallery} />}
+        {/* BUTTON */}
+        <div
+          className={`transition-all duration-700 ease-out
+            ${
+              isVisible
+                ? "opacity-100 translate-y-0 scale-100"
+                : "opacity-0 translate-y-8 scale-90"
+            }
+          `}
+          style={{
+            transitionDelay: "750ms",
+          }}
+        >
+          <GoldButton href="#contact" className="mt-6">
+            {button}
+          </GoldButton>
+        </div>
+      </div>
     </section>
   );
 }

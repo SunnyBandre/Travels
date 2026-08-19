@@ -1,11 +1,11 @@
 export default function GoldButton({
   children,
   href = "#",
-  variant = "filled", // "filled" | "outline-on-gold" (white bg used on gold sections)
+  variant = "filled",
   className = "",
 }) {
   const base =
-    "inline-block font-inter tracking-wide text-sm sm:text-5xl px-8 py-3 transition-colors duration-200 rounded-lg";
+    "inline-block font-inter tracking-wide text-sm sm:text-5xl px-8 py-3 transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 rounded-lg shadow-md hover:shadow-lg";
 
   const styles = {
     filled: "bg-[#A77631] text-white hover:bg-gold-700",
@@ -13,10 +13,7 @@ export default function GoldButton({
   };
 
   return (
-    <a
-      href={href}
-      className={`${base} text-5xl ${styles[variant]} ${className}`}
-    >
+    <a href={href} className={`${base} ${styles[variant]} ${className}`}>
       {children}
     </a>
   );
